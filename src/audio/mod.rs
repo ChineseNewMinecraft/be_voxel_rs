@@ -5,7 +5,7 @@ pub fn test_audio() {
 
     let scene = AmbisonicBuilder::default().build();
 
-    let source = rodio::source::SineWave::new(220);
+    let source = rodio::source::SineWave::new(341);
     let mut sound = scene.play_at(source, [50.0, 1.0, 0.0]);
 
     // move sound from left to right
