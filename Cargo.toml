@@ -1,0 +1,23 @@
+[package]
+name = "be_voxel_rs"
+version = "0.1.0"
+authors = ["LemonHX <runzhe2001@hotmail.com>"]
+edition = "2018"
+
+[dependencies]
+# graphical
+ash = "0.31.0"
+# physics
+nphysics3d = "0.16.1"
+bvh = "0.3.2"
+# linear math
+nalgebra = "0.21.1"
+# audio
+ambisonic = "0.3.0"
+rodio = "0.11.0"
+# ecs
+specs = "0.16.1"
+# AI
+pathfinding = "2.0.4"
+# utils
+winit = "0.22.2"
