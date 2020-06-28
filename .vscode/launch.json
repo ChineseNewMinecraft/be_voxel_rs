@@ -1,0 +1,61 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'be_voxel_rs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=be_voxel_rs"
+                ],
+                "filter": {
+                    "name": "be_voxel_rs",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'be_voxel_rs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=be_voxel_rs",
+                    "--package=be_voxel_rs"
+                ],
+                "filter": {
+                    "name": "be_voxel_rs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'be_voxel_rs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=be_voxel_rs",
+                    "--package=be_voxel_rs"
+                ],
+                "filter": {
+                    "name": "be_voxel_rs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
