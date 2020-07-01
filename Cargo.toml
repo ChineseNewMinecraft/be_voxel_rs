@@ -16,11 +16,16 @@ nalgebra = "0.21.1"
 ambisonic = "0.3.0"
 rodio = "0.11.0"
 # ecs
-specs = "0.16.1"
+specs = { version = "0.16.1", features = ["specs-derive"] }
 # AI
 pathfinding = "2.0.4"
 # utils
 winit = "0.22.2"
+serde = "1.0"
+serde_json = "1.0"
+image = "0.23.6"
+# UI
+raqote = "0.7"
 
 # platform
 [target.'cfg(windows)'.dependencies]

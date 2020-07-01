@@ -50,7 +50,7 @@ pub fn record_submit_commandbuffer<D: DeviceV1_0, F: FnOnce(&D, vk::CommandBuffe
             .expect("Create fence failed.");
 
         let command_buffers = vec![command_buffer];
-
+        // TODO: parallelize this function
         let submit_info = vk::SubmitInfo::builder()
             .wait_semaphores(wait_semaphores)
             .wait_dst_stage_mask(wait_mask)
