@@ -1,6 +1,7 @@
 mod audio;
 mod renderer;
 mod utils;
+mod gui;
 
 #[derive(Clone, Debug, Copy)]
 struct Vertex {
@@ -24,41 +25,10 @@ fn main() {
     let _ = std::thread::spawn(move || {
         audio::test_audio();
     });
-    use raqote::*;
-    use raqote::{
-        DrawOptions, DrawTarget, PathBuilder, Point, SolidSource, Source, StrokeStyle, Transform,
-    };
-let mut dt = DrawTarget::new(400, 400);
+    use raqote::{DrawTarget, Point};
+    let mut dt = DrawTarget::new(400, 400);
 
-    let mut pb = PathBuilder::new();
-    pb.move_to(100., 100.);
-    pb.line_to(200., 100.);
-    pb.line_to(200., 150.);
-    pb.line_to(100., 150.);
-    pb.line_to(100., 100.);
-    pb.close();
-
-    let path = pb.finish();
-    let gradient = Source::new_linear_gradient(
-        Gradient {
-            stops: vec![
-                GradientStop {
-                    position: 0.8,
-                    color: Color::new(0xff, 0x66, 0xcc, 0xff),
-                },
-                GradientStop {
-                    position: 1.,
-                    color: Color::new(0xff, 0x66, 0xff, 0xcc),
-                },
-            ],
-        },
-        Point::new(100., 100.),
-        Point::new(100., 150.),
-        Spread::Pad,
-    );
-    dt.fill(&path, &gradient, &DrawOptions::new());
-    let image = dt.get_data_u8();
-    utils::ui_debug::ui_debug(&image, (400,400));
+    gui::test_gui::draw_button(&mut dt, "test btn", (200., 100.), Point::new(50., 50.), 10.)
 }
 
 // use specs::*;
