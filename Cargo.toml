@@ -25,8 +25,9 @@ serde = "1.0"
 serde_json = "1.0"
 image = "0.23.6"
 # UI
-raqote = "0.7.14"
-font-kit = "0.5.0"
+raqote = "0.8"
+pathfinder_geometry = "0.5.1"
+font-kit = "0.7"
 
 # platform
 [target.'cfg(windows)'.dependencies]
