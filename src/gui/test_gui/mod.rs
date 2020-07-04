@@ -116,8 +116,11 @@ pub fn draw_button(dt: &mut DrawTarget, text: &str, size: (f32, f32), pos: Point
     );
     pb.line_to(pos.x, pos.y + radius);
     pb.close();
-    let font = SystemSource::new()
-        .select_best_match(&[FamilyName::Title("Arial".into())], &Properties::new())
+    let mut prop = Properties::new();
+    prop.weight(font_kit::properties::Weight::BOLD);
+    prop.style(font_kit::properties::Style::Italic);
+    let mut font = SystemSource::new()
+        .select_best_match(&[FamilyName::Title("Arial".into())], &prop)
         .unwrap()
         .load()
         .unwrap();
